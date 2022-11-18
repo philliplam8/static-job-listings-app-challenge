@@ -1,5 +1,7 @@
 // components/Layout.tsx
 
+import Image from "next/image";
+
 type LayoutProps = {
   children: React.ReactNode;
 };
@@ -7,7 +9,18 @@ type LayoutProps = {
 export default function Layout({ children }: LayoutProps): JSX.Element {
   return (
     <>
-      <main className="bg-background p-1">{children}</main>
+      <main className="bg-background">
+        <div className="min-w-screen object-fill bg-primary">
+          <Image
+            src={`/images/bg-header-desktop.svg`}
+            alt={"background-header"}
+            width={10000}
+            height={200}
+            className={"object-fill"}
+          />
+        </div>
+        <>{children}</>
+      </main>
     </>
   );
 }
