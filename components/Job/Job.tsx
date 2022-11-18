@@ -1,3 +1,5 @@
+import { Tag } from '../Tag'
+
 interface JobProps {
   image: string;
   company: string;
@@ -8,16 +10,16 @@ export default function Job(props: JobProps): JSX.Element {
   return (
     <div
       id={`job-${props.title}`}
-      className="flex flex-col md:flex-row justify-between p-4 border-2 rounded-md shadow-lg"
+      className="flex flex-col md:flex-row justify-between px-4 py-10 md:py-4 m-10 border-l-4 border-primary rounded-md shadow-lg"
     >
       <div
         id={`job-details-${props.title}`}
-        className="flex flex-col md:flex-row gap-4 md:items-center border-b md:border-none"
+        className="flex flex-col md:flex-row gap-4 md:items-center border-b border-lightGrayishCyan md:border-none"
       >
-        <div className="w-24 h-24 border-2 rounded-[100%]">Avatar</div>
+        <div className="w-16 h-16 md:w-24 md:h-24 absolute md:relative top-2 border-2 rounded-[100%]">Avatar</div>
         <div className="flex flex-col">
           <div className="flex flex-row gap-2">
-            <h2 className="text-md font-bold">{props.company}</h2>
+            <h2 className="text-md text-primary font-bold ">{props.company}</h2>
             <div>NEW!</div>
             <div>FEATURED</div>
           </div>
@@ -34,14 +36,14 @@ export default function Job(props: JobProps): JSX.Element {
 
       <div
         id={`job-tags-${props.title}`}
-        className={"flex flex-row gap-2 md:justify-center items-center"}
+        className={"flex flex-row flex-wrap gap-2 md:justify-center items-center"}
       >
-        <div>Frontend</div>
-        <div>Senior</div>
-        <div>HTML</div>
-        <div>CSS</div>
-        <div>JavaScript</div>
+        <Tag label="Frontend" />
+        <Tag label="Senior" />
+        <Tag label="HTML" />
+        <Tag label="CSS" />
+        <Tag label="JavaScript" />
       </div>
-    </div>
+    </div >
   );
 }
