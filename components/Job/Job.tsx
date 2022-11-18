@@ -8,11 +8,11 @@ export default function Job(props: JobProps): JSX.Element {
   return (
     <div
       id={`job-${props.title}`}
-      className="flex flex-row justify-between p-4 border-2 rounded-md shadow-lg"
+      className="flex flex-col md:flex-row justify-between p-4 border-2 rounded-md shadow-lg"
     >
       <div
         id={`job-details-${props.title}`}
-        className="flex flex-row gap-4 items-center"
+        className="flex flex-col md:flex-row gap-4 md:items-center border-b md:border-none"
       >
         <div className="w-24 h-24 border-2 rounded-[100%]">Avatar</div>
         <div className="flex flex-col">
@@ -21,7 +21,7 @@ export default function Job(props: JobProps): JSX.Element {
             <div>NEW!</div>
             <div>FEATURED</div>
           </div>
-          <h1 className="text-xl font-bold">{props.title}</h1>
+          <h1 className="md:text-xl font-bold">{props.title}</h1>
           <div className="flex flex-row gap-2">
             <div>1d ago</div>
             <div>Full Time</div>
@@ -30,9 +30,11 @@ export default function Job(props: JobProps): JSX.Element {
         </div>
       </div>
 
+
+
       <div
         id={`job-tags-${props.title}`}
-        className={"flex flex-row gap-2 justify-center items-center"}
+        className={"flex flex-row gap-2 md:justify-center items-center"}
       >
         <div>Frontend</div>
         <div>Senior</div>
