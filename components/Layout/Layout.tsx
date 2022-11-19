@@ -20,7 +20,10 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
             className={"object-fill"}
           />
         </div>
-        <div className="min-[1200px]:px-auto px-10">{children}</div>
+        <div className="min-[1200px]:px-auto px-10">
+          <AppliedFilters />
+          {children}
+        </div>
       </main>
     </>
   );
