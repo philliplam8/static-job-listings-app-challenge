@@ -1,6 +1,7 @@
 // components/Layout.tsx
 
 import Image from "next/image";
+import { AppliedFilters } from "../Filter";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -19,7 +20,7 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
             className={"object-fill"}
           />
         </div>
-        <>{children}</>
+        <div className="min-[1200px]:px-auto px-10">{children}</div>
       </main>
     </>
   );
