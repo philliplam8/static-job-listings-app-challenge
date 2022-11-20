@@ -18,7 +18,7 @@ export default function AppliedFilters(): JSX.Element {
         })}
       </div>
       <button onClick={() => removeAll()}>
-        <h3 className="text-primary text-sm font-bold hover:underline active:underline">
+        <h3 className="text-sm font-bold text-darkGrayishCyan hover:underline hover:text-primary active:text-primary active:underline">
           Clear
         </h3>
       </button>
