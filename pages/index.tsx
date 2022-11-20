@@ -2,6 +2,7 @@ import Head from "next/head";
 import useSWR from "swr";
 import { Layout } from "../components/Layout";
 import { Job, JobType } from "../components/Job";
+import { AppliedFilters } from "../components/Filter";
 
 // Fetcher functop to wrap the native fetch function and return the result of a call to url in json format
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
@@ -27,6 +28,8 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <AppliedFilters />
 
       <div id="jobs">
         {jobs.map((job: JobType) => {
