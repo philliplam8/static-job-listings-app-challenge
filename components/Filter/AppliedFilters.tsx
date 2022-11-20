@@ -8,8 +8,8 @@ export default function AppliedFilters(): JSX.Element {
 
   return (
     <div
-      className={`max-w-[1110px] mx-auto mt-10 -mb-20 py-4 px-8 relative -top-20 flex flex-row justify-between gap-2 bg-white rounded-md shadow-xl shadow-primary/20 ${
-        Object.keys(filters).length ? "visible" : "invisible"
+      className={`max-w-[1110px] min-h-16 mx-auto py-4 px-8 mt-10 -mb-20 relative -top-20 flex flex-row justify-between gap-2 bg-white rounded-md shadow-xl shadow-primary/20 ${
+        Object.keys(filters).length ? "visible" : "h-16 invisible"
       }`}
     >
       <div className="flex flex-row flex-wrap gap-4">
