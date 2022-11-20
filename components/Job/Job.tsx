@@ -55,10 +55,10 @@ export default function Job(props: JobType): JSX.Element {
         id={`job-tags-${props.position}`}
         className={"flex flex-row flex-wrap gap-2 md:justify-end items-center"}
       >
-        <Tag label={props.role} />
-        <Tag label={props.level} />
-        <TagGroup tags={props.languages} />
-        <TagGroup tags={props.tools} />
+        <Tag label={props.role} labelType={"role"} />
+        <Tag label={props.level} labelType={"level"} />
+        <TagGroup tags={props.languages} labelType={"language"} />
+        <TagGroup tags={props.tools} labelType={"tool"} />
       </div>
     </div>
   );

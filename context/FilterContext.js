@@ -6,9 +6,9 @@ export const FilterContext = createContext();
 export const FilterProvider = ({ children }) => {
   const [filters, setFilters] = useState({});
 
-  const addFilter = (filter) => {
+  const addFilter = (filter, type) => {
     let tempFilters = cloneDeep(filters);
-    tempFilters[filter] = true;
+    tempFilters[filter] = type;
     setFilters(tempFilters);
   };
 
