@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import Head from "next/head";
 import useSWR from "swr";
 import { Layout } from "../components/Layout";
@@ -10,8 +9,6 @@ import { Skeleton } from "../components/SkeletonLoader";
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function Home() {
-  const [filteredJobs, setFilteredJobs] = useState();
-
   // Set up SWR to run the fetch function when calling '/api/staticdata'
   // There are 3 possible states: (1) loading when data is null (2) ready when the data is returned (3) error when there was an error fetching the data
   const { data, error } = useSWR("/api/staticdata", fetcher);
@@ -34,10 +31,8 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <AppliedFilters />
-
-      <Jobs selectedJobs={jobs} />
+      <Jobs allJobs={jobs} />
     </Layout>
   );
 }

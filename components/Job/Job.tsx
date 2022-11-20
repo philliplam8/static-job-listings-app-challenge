@@ -3,6 +3,12 @@ import { BadgeGroup } from "../BadgeGroup";
 import { Subtitles } from "../Subtitles";
 import { Avatar } from "../Avatar";
 
+export const LABEL_TYPES = {
+  role: "role",
+  level: "level",
+  language: "language",
+  tool: "tool",
+};
 export interface JobType {
   id: number;
   company: string;
@@ -55,10 +61,10 @@ export default function Job(props: JobType): JSX.Element {
         id={`job-tags-${props.position}`}
         className={"flex flex-row flex-wrap gap-2 md:justify-end items-center"}
       >
-        <Tag label={props.role} labelType={"role"} />
-        <Tag label={props.level} labelType={"level"} />
-        <TagGroup tags={props.languages} labelType={"language"} />
-        <TagGroup tags={props.tools} labelType={"tool"} />
+        <Tag label={props.role} labelType={LABEL_TYPES.role} />
+        <Tag label={props.level} labelType={LABEL_TYPES.level} />
+        <TagGroup tags={props.languages} labelType={LABEL_TYPES.language} />
+        <TagGroup tags={props.tools} labelType={LABEL_TYPES.tool} />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import Job from "./Job";
 import Jobs from "./Jobs";
-import { JobType } from "./Job";
+import { JobType, LABEL_TYPES } from "./Job";
 
-export { Job, Jobs };
+export { Job, Jobs, LABEL_TYPES };
 export type { JobType };
