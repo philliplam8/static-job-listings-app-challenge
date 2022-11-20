@@ -24,7 +24,7 @@ export default function Job(props: JobType): JSX.Element {
     <div
       id={`job-${props.position}`}
       className={`max-w-[1110px] flex flex-col md:flex-row justify-between px-4 py-10 md:py-4 my-10 mx-auto bg-white rounded-md shadow-xl shadow-primary/20 ${
-        props.featured ? "border-l-4 border-primary" : ""
+        props.featured ? "border-l-[5px] border-primary" : ""
       }`}
     >
       <div
@@ -37,8 +37,11 @@ export default function Job(props: JobType): JSX.Element {
             <h2 className="text-md text-primary font-bold ">{props.company}</h2>
             <BadgeGroup new={props.new} featured={props.featured} />
           </div>
-          <h1 className="md:text-xl font-bold text-veryDarkGrayishCyan hover:text-primary active:text-primary">
-            <a href={`#`}>{props.position}</a>
+          <h1
+            id={`${props.company}-${props.position}`}
+            className="md:text-xl font-bold text-veryDarkGrayishCyan hover:text-primary active:text-primary"
+          >
+            <a href={`#${props.company}-${props.position}`}>{props.position}</a>
           </h1>
           <Subtitles
             postedAt={props.postedAt}
@@ -50,9 +53,7 @@ export default function Job(props: JobType): JSX.Element {
 
       <div
         id={`job-tags-${props.position}`}
-        className={
-          "flex flex-row flex-wrap gap-2 md:justify-center items-center"
-        }
+        className={"flex flex-row flex-wrap gap-2 md:justify-end items-center"}
       >
         <Tag label={props.role} />
         <Tag label={props.level} />
