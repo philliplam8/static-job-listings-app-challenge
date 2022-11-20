@@ -6,7 +6,7 @@ interface SubtitleType {
 
 export default function Subtitles(props: SubtitleType): JSX.Element {
   return (
-    <div className="flex flex-row gap-2 text-darkGrayishCyan">
+    <div className="flex flex-row gap-3 text-darkGrayishCyan">
       <p>{props.postedAt}</p>
       <p>•</p>
       <p>{props.contract}</p>
