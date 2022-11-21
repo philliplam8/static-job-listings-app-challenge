@@ -3,7 +3,7 @@ import useSWR from "swr";
 import { Layout } from "../components/Layout";
 import { Jobs } from "../components/Job";
 import { AppliedFilters } from "../components/Filter";
-import { Skeleton } from "../components/SkeletonLoader";
+import { SkeletonLoader } from "../components/SkeletonLoader";
 
 // Fetcher functop to wrap the native fetch function and return the result of a call to url in json format
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
@@ -17,18 +17,20 @@ export default function Home() {
 
   // Handle the error state
   if (error) return <div>Failed to load</div>;
-  // Handle the loading state
-  if (!data) return <Skeleton />;
+  // if (error) {
+  //   router.push("/500");
+  // }
 
-  //Handle the ready state and display the result contained in the data object mapped to the structure of the json file
-  const jobs = JSON.parse(data.toString());
-
+  // Handle the loading state and the ready state and display the result contained in the data object
+  // mapped to the structure of the json file
   return (
     <Layout>
-      <div className="sticky top-28 z-10">
-        <AppliedFilters />
-      </div>
-      <Jobs allJobs={jobs} />
+      <AppliedFilters />
+      {!data ? (
+        <SkeletonLoader />
+      ) : (
+        <Jobs allJobs={JSON.parse(data.toString())} />
+      )}
     </Layout>
   );
 }

@@ -1,3 +1,4 @@
 import Skeleton from "./Skeleton";
+import SkeletonLoader from "./SkeletonLoader";
 
-export { Skeleton };
+export { Skeleton, SkeletonLoader };
