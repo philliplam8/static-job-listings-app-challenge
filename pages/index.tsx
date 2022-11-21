@@ -1,4 +1,4 @@
-import Head from "next/head";
+import { useRouter } from "next/router";
 import useSWR from "swr";
 import { Layout } from "../components/Layout";
 import { Jobs } from "../components/Job";
@@ -9,6 +9,8 @@ import { Skeleton } from "../components/SkeletonLoader";
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function Home() {
+  const router = useRouter();
+
   // Set up SWR to run the fetch function when calling '/api/staticdata'
   // There are 3 possible states: (1) loading when data is null (2) ready when the data is returned (3) error when there was an error fetching the data
   const { data, error } = useSWR("/api/staticdata", fetcher);
@@ -23,14 +25,6 @@ export default function Home() {
 
   return (
     <Layout>
-      <Head>
-        <title>Frontend Mentor | Job Listings</title>
-        <meta
-          name="description"
-          content="Frontend Mentor - Static Job Listings Challenge"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <div className="sticky top-28 z-10">
         <AppliedFilters />
       </div>

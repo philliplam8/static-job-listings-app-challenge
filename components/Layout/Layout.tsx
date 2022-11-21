@@ -1,5 +1,6 @@
 // components/Layout.tsx
 
+import Head from "next/head";
 import Image from "next/image";
 import { Footer } from "../Footer";
 
@@ -31,6 +32,14 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
 
   return (
     <>
+      <Head>
+        <title>Frontend Mentor | Job Listings</title>
+        <meta
+          name="description"
+          content="Frontend Mentor - Static Job Listings Challenge"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <main className="bg-background">
         <div className="min-h-screen h-full flex flex-col justify-between">
           <div>
