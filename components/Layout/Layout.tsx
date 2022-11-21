@@ -31,7 +31,9 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
   return (
     <>
       <main className="bg-background">
-        <BackgroundHeader />
+        <div className="sticky -top-20 z-10">
+          <BackgroundHeader />
+        </div>
         <div className="min-[1200px]:px-auto px-[23px] md:px-10">
           {children}
         </div>

@@ -31,7 +31,9 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <AppliedFilters />
+      <div className="sticky top-28 z-10">
+        <AppliedFilters />
+      </div>
       <Jobs allJobs={jobs} />
     </Layout>
   );
