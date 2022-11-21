@@ -8,7 +8,7 @@ export default function Filter(props: { label: string }): JSX.Element {
   return (
     <div className="h-8 flex flex-row">
       <div className="h-full flex items-center py-1 px-2 bg-lightGrayishCyan text-primary rounded-l-md">
-        <h3 className="text-sm font-bold">{props.label}</h3>
+        <h3 className="text-md font-bold">{props.label}</h3>
       </div>
       <button
         id={`btn-remove-filter-${props.label}`}

@@ -8,7 +8,7 @@ export default function AppliedFilters(): JSX.Element {
 
   return (
     <div
-      className={`max-w-[1110px] min-h-16 mx-auto py-4 px-8 mt-10 -mb-20 relative -top-20 flex flex-row justify-between gap-2 bg-white rounded-md shadow-xl shadow-primary/20 ${
+      className={`max-w-[1110px] min-h-16 mx-auto py-4 px-6 mt-10 -mb-20 relative -top-20 flex flex-row justify-between gap-2 bg-white rounded-[5px] shadow-xl shadow-primary/20 ${
         Object.keys(filters).length ? "visible" : "h-16 invisible"
       }`}
     >
@@ -18,7 +18,7 @@ export default function AppliedFilters(): JSX.Element {
         })}
       </div>
       <button onClick={() => removeAll()}>
-        <h3 className="text-sm font-bold text-darkGrayishCyan hover:underline hover:text-primary active:text-primary active:underline">
+        <h3 className="text-md font-bold text-darkGrayishCyan hover:underline hover:text-primary active:text-primary active:underline">
           Clear
         </h3>
       </button>
