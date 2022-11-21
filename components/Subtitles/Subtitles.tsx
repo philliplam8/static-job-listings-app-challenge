@@ -10,7 +10,7 @@ export default function Subtitles(props: SubtitleType): JSX.Element {
   }
 
   return (
-    <div className="flex flex-row gap-3 text-darkGrayishCyan">
+    <div className="flex flex-row whitespace-nowrap gap-3 text-darkGrayishCyan">
       <p>{props.postedAt}</p>
       <Divider />
       <p>{props.contract}</p>

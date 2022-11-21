@@ -29,7 +29,7 @@ export default function Job(props: JobType): JSX.Element {
   return (
     <div
       id={`job-${props.position}`}
-      className={`max-w-[1110px] flex flex-col md:flex-row justify-between px-4 py-10 md:py-4 my-11 mx-auto bg-white rounded-md shadow-xl shadow-primary/20 ${
+      className={`max-w-[1110px] flex flex-col gap-x-3 md:flex-row justify-between px-4 py-10 md:py-4 my-11 mx-auto bg-white rounded-md shadow-xl shadow-primary/20 ${
         props.featured ? "border-l-[5px] border-primary" : ""
       }`}
     >
