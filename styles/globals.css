@@ -19,11 +19,6 @@ a {
   box-sizing: border-box;
 }
 
-@layer base {
-  html {
-    @apply bg-background
-  }
-}
 
 /* @media (prefers-color-scheme: dark) {
   html {
