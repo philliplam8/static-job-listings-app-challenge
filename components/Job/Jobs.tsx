@@ -1,10 +1,4 @@
-import {
-  useState,
-  useContext,
-  useEffect,
-  SetStateAction,
-  useMemo,
-} from "react";
+import { useState, useContext, useEffect, SetStateAction } from "react";
 import { FilterContext } from "../../context/FilterContext";
 import { Job, JobType, LABEL_TYPES } from "./";
 
