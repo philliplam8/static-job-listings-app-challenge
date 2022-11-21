@@ -7,18 +7,34 @@ type LayoutProps = {
 };
 
 export default function Layout({ children }: LayoutProps): JSX.Element {
+  function BackgroundHeader() {
+    return (
+      <>
+        <Image
+          src={`/images/bg-header-desktop.svg`}
+          alt={"background-header"}
+          width={1440}
+          height={156}
+          className={"min-w-screen w-full h-[156px] bg-primary hidden md:block"}
+        />
+        <Image
+          src={`/images/bg-header-mobile.svg`}
+          alt={"background-header"}
+          width={375}
+          height={156}
+          className={"min-w-screen w-full h-[156px] bg-primary block md:hidden"}
+        />
+      </>
+    );
+  }
+
   return (
     <>
       <main className="bg-background">
-        <div className="min-w-screen bg-primary object-cover">
-          <Image
-            src={`/images/bg-header-desktop.svg`}
-            alt={"background-header"}
-            width={5000}
-            height={156}
-          />
+        <BackgroundHeader />
+        <div className="min-[1200px]:px-auto px-[23px] md:px-10">
+          {children}
         </div>
-        <div className="min-[1200px]:px-auto px-10">{children}</div>
       </main>
     </>
   );
