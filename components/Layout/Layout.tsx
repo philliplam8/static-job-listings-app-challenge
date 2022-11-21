@@ -1,6 +1,7 @@
 // components/Layout.tsx
 
 import Image from "next/image";
+import { Footer } from "../Footer";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -37,6 +38,7 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
         <div className="min-[1200px]:px-auto px-[23px] md:px-10">
           {children}
         </div>
+        <Footer />
       </main>
     </>
   );
