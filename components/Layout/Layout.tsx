@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 // components/Layout.tsx
 
 import Head from "next/head";
@@ -12,14 +13,14 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
   function BackgroundHeader() {
     return (
       <div className="sticky -top-20 z-10">
-        <Image
+        <img
           src={`/images/bg-header-desktop.svg`}
           alt={"background-header"}
           width={1440}
           height={156}
           className={"min-w-screen w-full h-[156px] bg-primary hidden md:block"}
         />
-        <Image
+        <img
           src={`/images/bg-header-mobile.svg`}
           alt={"background-header"}
           width={375}

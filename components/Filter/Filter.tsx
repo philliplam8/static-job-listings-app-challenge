@@ -1,4 +1,4 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
 import { useContext } from "react";
 import { FilterContext } from "../../context/FilterContext";
 
@@ -17,7 +17,7 @@ export default function Filter(props: { label: string }): JSX.Element {
         }
         onClick={() => removeFilter(props.label)}
       >
-        <Image
+        <img
           src={"/images/icon-remove.svg"}
           alt={`Remove filter ${props.label}`}
           width={14}
