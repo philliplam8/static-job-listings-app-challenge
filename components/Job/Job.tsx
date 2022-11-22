@@ -40,7 +40,7 @@ export default function Job(props: JobType): JSX.Element {
         <Avatar logo={props.logo} />
         <div className="h-full flex flex-col gap-2 md:gap-0 justify-between">
           <div className="flex flex-row items-center gap-6">
-            <h2 className="text-md text-primary font-bold ">{props.company}</h2>
+            <h1 className="text-md text-primary font-bold ">{props.company}</h1>
             <BadgeGroup new={props.new} featured={props.featured} />
           </div>
           <h1
