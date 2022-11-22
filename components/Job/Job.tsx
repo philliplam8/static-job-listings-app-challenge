@@ -58,7 +58,7 @@ export default function Job(props: JobType): JSX.Element {
       </div>
 
       <div
-        id={`job-tags-${props.position}`}
+        id={`job-tags-from-${props.company}-${props.position}`}
         className={
           "flex flex-row flex-wrap gap-x-4 md:justify-end items-center"
         }
