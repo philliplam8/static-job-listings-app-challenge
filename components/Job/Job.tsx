@@ -2,6 +2,7 @@ import { Tag, TagGroup } from "../TagGroup";
 import { BadgeGroup } from "../BadgeGroup";
 import { Subtitles } from "../Subtitles";
 import { Avatar } from "../Avatar";
+import formatId from "../../helpers/helpers";
 
 export const LABEL_TYPES = {
   role: "role",
@@ -26,15 +27,18 @@ export interface JobType {
 }
 
 export default function Job(props: JobType): JSX.Element {
+  const formatedCompany = formatId(props.company);
+  const formatedPosition = formatId(props.position);
+
   return (
     <div
-      id={`job-${props.company}-${props.position}`}
+      id={`job-${formatedCompany}-${formatedPosition}`}
       className={`max-w-[1110px] flex flex-col gap-x-3 md:flex-row justify-between px-4 py-10 md:py-4 my-11 mx-auto bg-white rounded-md shadow-xl shadow-primary/20 ${
         props.featured ? "border-l-[5px] border-primary" : ""
       }`}
     >
       <div
-        id={`job-details-${props.company}-${props.position}`}
+        id={`job-details-${formatedCompany}-${formatedPosition}`}
         className="py-2 relative flex flex-col md:flex-row gap-4 md:items-center border-b border-darkGrayishCyan/50 md:border-none"
       >
         <Avatar logo={props.logo} />
@@ -44,7 +48,7 @@ export default function Job(props: JobType): JSX.Element {
             <BadgeGroup new={props.new} featured={props.featured} />
           </div>
           <h1
-            id={`${props.company}-${props.position}`}
+            id={`job-title-${formatedCompany}-${formatedPosition}`}
             className="md:text-xl font-bold text-veryDarkGrayishCyan hover:text-primary active:text-primary"
           >
             <a href={`#${props.company}-${props.position}`}>{props.position}</a>
@@ -58,7 +62,7 @@ export default function Job(props: JobType): JSX.Element {
       </div>
 
       <div
-        id={`job-tags-from-${props.company}-${props.position}`}
+        id={`job-tags-from-${formatedCompany}-${formatedPosition}`}
         className={
           "flex flex-row flex-wrap gap-x-4 md:justify-end items-center"
         }
