@@ -28,13 +28,13 @@ export interface JobType {
 export default function Job(props: JobType): JSX.Element {
   return (
     <div
-      id={`job-${props.position}`}
+      id={`job-${props.company}-${props.position}`}
       className={`max-w-[1110px] flex flex-col gap-x-3 md:flex-row justify-between px-4 py-10 md:py-4 my-11 mx-auto bg-white rounded-md shadow-xl shadow-primary/20 ${
         props.featured ? "border-l-[5px] border-primary" : ""
       }`}
     >
       <div
-        id={`job-details-${props.position}`}
+        id={`job-details-${props.company}-${props.position}`}
         className="py-2 relative flex flex-col md:flex-row gap-4 md:items-center border-b border-darkGrayishCyan/50 md:border-none"
       >
         <Avatar logo={props.logo} />
