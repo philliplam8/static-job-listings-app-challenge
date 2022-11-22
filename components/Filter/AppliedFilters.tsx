@@ -18,10 +18,11 @@ export default function AppliedFilters(): JSX.Element {
             return <Filter key={filter} label={filter} />;
           })}
         </div>
-        <button onClick={() => removeAll()}>
-          <h3 className="text-md font-bold text-darkGrayishCyan hover:underline hover:text-primary active:text-primary active:underline">
-            Clear
-          </h3>
+        <button
+          className="text-md font-bold text-darkGrayishCyan hover:underline hover:text-primary active:text-primary active:underline"
+          onClick={() => removeAll()}
+        >
+          Clear
         </button>
       </div>
     </div>
