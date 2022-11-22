@@ -2,7 +2,7 @@ import { Tag, TagGroup } from "../TagGroup";
 import { BadgeGroup } from "../BadgeGroup";
 import { Subtitles } from "../Subtitles";
 import { Avatar } from "../Avatar";
-import formatId from "../../helpers/helpers";
+import { formatId } from "../../helpers";
 
 export const LABEL_TYPES = {
   role: "role",
