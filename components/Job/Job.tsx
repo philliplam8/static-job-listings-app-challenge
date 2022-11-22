@@ -48,10 +48,12 @@ export default function Job(props: JobType): JSX.Element {
             <BadgeGroup new={props.new} featured={props.featured} />
           </div>
           <h1
-            id={`job-title-${formatedCompany}-${formatedPosition}`}
+            id={`${formatedCompany}-${formatedPosition}`}
             className="md:text-xl font-bold text-veryDarkGrayishCyan hover:text-primary active:text-primary"
           >
-            <a href={`#${props.company}-${props.position}`}>{props.position}</a>
+            <a href={`#${formatedCompany}-${formatedPosition}`}>
+              {props.position}
+            </a>
           </h1>
           <Subtitles
             postedAt={props.postedAt}
