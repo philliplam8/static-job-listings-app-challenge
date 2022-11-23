@@ -14,7 +14,6 @@ export interface JobType {
   id: number;
   company: string;
   logo: string;
-  new: boolean;
   featured: boolean;
   position: string;
   role: string;
